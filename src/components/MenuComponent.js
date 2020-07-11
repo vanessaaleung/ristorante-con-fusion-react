@@ -4,12 +4,18 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 're
 
 class Menu extends Component {
   
+  // Will invoke when the component is created
   constructor(props) {
     super(props); // supply the props to the super class
     
     this.state = { // stores properties the component can make use of
       selectedDish: null
     }
+    console.log('Menu Component constructor is invoked');
+  }
+
+  componentDidMount() {
+    console.log('Menu Component componentDidMount is invoked');
   }
 
   onDishSelect(dish) {
@@ -52,6 +58,8 @@ class Menu extends Component {
         </div>
       );
     });
+
+    console.log('Menu Component render is invoked');
 
     return (
       <div className="container">
