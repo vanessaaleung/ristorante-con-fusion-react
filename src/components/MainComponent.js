@@ -10,8 +10,9 @@ import { DISHES } from '../shared/dishes';
 
 class Main extends Component {
   
+  // Will invoke when the component is created
   constructor(props) {
-    super(props);
+    super(props);  // supply the props to the super class
     
     this.state = {  // stores properties the component can make use of
       dishes: DISHES,
@@ -25,6 +26,7 @@ class Main extends Component {
     });
   }
 
+  // return the corresponding view for the component 
   render() {
     return (
       <div className="App">
