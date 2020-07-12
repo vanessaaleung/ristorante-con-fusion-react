@@ -28,7 +28,9 @@ class DishDetail extends Component {
         return (
           <div>
             <li key={comment.id}>{comment.comment}</li>
-            <p>--{comment.author}, {new Date(comment.date).toDateString()}</p>
+            <p>--{comment.author},&nbsp;
+                  {new Intl.DateTimeFormat('en-US', 
+                                          { year: 'numeric', month: 'short', day:'2-digit'}).format(new Date(Date.parse(comment.date)) )}</p>
           </div>
           
         )
@@ -50,9 +52,11 @@ class DishDetail extends Component {
   render() {
     if (this.props.dish != null) {
       return (
-        <div className="row">
-          {this.renderDish(this.props.dish)}
-          {this.renderComments(this.props.dish.comments)}
+        <div className="container">
+          <div className="row">
+            {this.renderDish(this.props.dish)}
+            {this.renderComments(this.props.dish.comments)}
+          </div>
         </div>
       );
     }
