@@ -1,7 +1,7 @@
 // Display details of a selected dish
 // Representational Component - Do not store state, no constructor
 
-import React, { Component } from 'react';
+import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 function RenderDish({ dish }) {

@@ -1,11 +1,11 @@
-// Container Component
+// Container Component, responsible for the state of the application
 // not rendering views - no need import css
-// responsible for everything related to the state off the application
 
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
+import Header from './HeaderComponent.js';
 import Menu from './MenuComponent.js';
 import DishDetail from './DishdetailComponent.js';
+import Footer from './FooterComponent.js';
 import { DISHES } from '../shared/dishes';
 
 class Main extends Component {
@@ -29,18 +29,15 @@ class Main extends Component {
   // return the corresponding view for the component 
   render() {
     return (
-      <div className="App">
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
-          </div>
-        </Navbar>
+      <div>
+        <Header />
         <Menu dishes={this.state.dishes}
               onClick={(dishId) => this.onDishSelect(dishId)}/>
         <DishDetail 
             dish={this.state.dishes.filter(
                 (dish) => dish.id === this.state.selectedDish )[0] } // [0]: select the first in the array
         />
+        <Footer />
       </div>
     );
   }
