@@ -49,12 +49,59 @@ address{
 }
 
 .footer ul a, 
-.footer address a {
+address a {
   color: black;
 }
 
 .footer ul a:hover, 
-.footer address a:hover {
+address a:hover {
   text-decoration: none;
   color: black;
 }
+
+/* Contact */
+.btn-primary {
+  background-color: #EF9A9A;
+  border: none;
+  outline: none;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+  background-color: #E57373;
+  outline: none;
+}
+
+.btn-info {
+  background-color: #FFE0B2;
+  border: none;
+}
+
+.btn-info:hover {
+  background-color: #FFB74D;
+}
+
+.btn-success {
+  background-color: #FFCCBC;
+  border: none;
+  color: black;
+}
+
+.btn-success:hover {
+  background-color: #FF8A65;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
