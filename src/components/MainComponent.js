@@ -6,6 +6,7 @@ import Header from './HeaderComponent.js';
 import Home from './HomeComponent.js';
 import Menu from './MenuComponent.js';
 import DishDetail from './DishdetailComponent.js';
+import About from './AboutComponent.js';
 import Contact from './ContactComponent.js';
 import Footer from './FooterComponent.js';
 import { DISHES } from '../shared/dishes';
@@ -48,7 +49,7 @@ class Main extends Component {
       return (
         // parseInt(string, base): convert string to integer
         <DishDetail dish={this.state.dishes.filter(
-                            (dish) => dish.id === parseInt(match.params.dishId, 10)) [0] } 
+                            (dish) => dish.id === parseInt(match.params.dishId, 10))[0] } 
                     comments={this.state.comments.filter(
                             (comment) => comment.dishId === parseInt(match.params.dishId, 10))}
           /> 
@@ -62,6 +63,7 @@ class Main extends Component {
           <Route path="/home" component={HomePage} />
           <Route exact path="/menu" component={() => <Menu dishes={this.state.dishes} /> } />
           <Route path="/menu/:dishId" component={DishWithId} />
+          <Route exact path="/aboutus" component={() => <About leaders={this.state.leaders} />} />
           <Route exact path="/contactus" component={Contact} />
           <Redirect to="/home" />
         </Switch>

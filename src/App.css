@@ -104,8 +104,16 @@ address a:hover {
   text-decoration: none;
 }
 
+/* About */
+.card {
+  border: none;
+}
 
-
+.card-header {
+  background-color: #343A40;
+  color: white;
+  font-size: 28px;
+}
 
 
 
