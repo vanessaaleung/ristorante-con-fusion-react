@@ -90,10 +90,19 @@ address a:hover {
   background-color: #FF8A65;
 }
 
+/* Home */
 .card-title {
   font-weight: bold;
 }
 
+/* Links */
+.breadcrumb a, 
+.breadcrumb a:hover,
+.card a,
+.card a:hover {
+  color: black;
+  text-decoration: none;
+}
 
 
 
