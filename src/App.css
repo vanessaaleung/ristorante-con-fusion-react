@@ -11,6 +11,13 @@
   background-position: right;  
 }
 
+/* Header */
+.navbar-toggler, 
+.navbar-toggler:focus {
+  border: none;
+  outline: none;
+}
+
 .row-header{
   margin:0px auto;
   padding:0px auto;
