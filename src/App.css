@@ -64,20 +64,28 @@ address a:hover {
   background-color: #EF9A9A;
   border: none;
   outline: none;
+  color: black;
 }
 
-.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+.btn-primary:hover, 
+.btn-primary:active, 
+.btn-primary:focus, 
+.btn-primary:visited {
   background-color: #E57373;
   outline: none;
+  border: none;
+  color: black;
 }
 
 .btn-info {
   background-color: #FFE0B2;
   border: none;
+  color: black;
 }
 
 .btn-info:hover {
   background-color: #FFB74D;
+  color: black;
 }
 
 .btn-success {
@@ -88,6 +96,35 @@ address a:hover {
 
 .btn-success:hover {
   background-color: #FF8A65;
+  color: black;
+}
+
+form {
+  background-color: #eee;
+  border-radius: 6%;
+  padding: 50px 50px 30px 50px;
+}
+
+input.form-control {
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  padding: 0px 20px 0px 20px;
+  height: 50px;
+}
+
+select.form-control {
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  padding: 0px 0px 0px 20px;
+}
+
+textarea.form-control {
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  padding: 20px;
 }
 
 /* Home */
@@ -114,7 +151,6 @@ address a:hover {
   color: white;
   font-size: 28px;
 }
-
 
 
 
