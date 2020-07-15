@@ -30,6 +30,38 @@
   min-height:400px;
 }
 
+/* Header - Login */
+.btn-outline-secondary,
+.btn-outline-secondary:hover,
+.btn-outline-secondary:active,
+.btn-outline-secondary:focus {
+  border: none;
+  background-color: transparent;
+  color: black;
+}
+
+.bg-login {
+  background-color: #EF9A9A !important;
+  border: none;
+  outline: none;
+  color: black;
+  float: right;
+}
+
+.bg-login:hover, 
+.bg-login:active, 
+.bg-login:focus, 
+.bg-login:visited {
+  background-color: #E57373 !important;
+  outline: none;
+  border: none;
+  color: black;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
 /* Footer */
 .footer{
   background-color: #eee;
@@ -99,13 +131,13 @@ address a:hover {
   color: black;
 }
 
-form {
+.feedbackForm {
   background-color: #eee;
   border-radius: 6%;
   padding: 50px 50px 30px 50px;
 }
 
-input.form-control {
+.feedbackForm input.form-control {
   border: none;
   border-radius: 20px;
   outline: none;
@@ -113,14 +145,14 @@ input.form-control {
   height: 50px;
 }
 
-select.form-control {
+.feedbackForm select.form-control {
   border: none;
   border-radius: 20px;
   outline: none;
   padding: 0px 0px 0px 20px;
 }
 
-textarea.form-control {
+.feedbackForm textarea.form-control {
   border: none;
   border-radius: 20px;
   outline: none;
