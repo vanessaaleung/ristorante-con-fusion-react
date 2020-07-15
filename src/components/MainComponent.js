@@ -23,12 +23,6 @@ const mapStateToProps = state => {  // state: from redux store
 }
 
 class Main extends Component {
-  
-  // Will invoke when the component is created
-  constructor(props) {
-    super(props);  // supply the props to the super class
-
-  }
 
   // return the corresponding view for the component 
   render() {
