@@ -100,7 +100,6 @@ class CommmentForm extends Component {
                             <option>3</option>
                             <option>4</option>
                             <option>5</option>
-                            <option>6</option>
                     </Control.select>
                   </Col>
               </Row>
