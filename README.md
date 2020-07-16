@@ -1,5 +1,5 @@
 # Ristorante con Fusion
-_A restaurant website design, utilizing React_
+_A restaurant website design, utilizing React and Redux_
 
 Check out the website [here](https://vanessaaleung.github.io/conFusion-react/)
 
