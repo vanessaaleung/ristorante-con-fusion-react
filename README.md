@@ -6,33 +6,36 @@ Check out the website [here](https://vanessaaleung.github.io/conFusion-react/)
 <img src="demo/banner.png">
 
 ## Features
-### Carousel 
-_with Javascript control to play/pause the slides_
-<img src="demo/carousel.gif">
+### Login
+_with uncontrolled form_
 
-### Badges
-_to highlight new dishes/campaigns_
+<img src="demo/login.gif" width="500px">
 
-<img src="demo/badge.png" width="500px">
+### Asynchronous Communication
+_Design to recognize the asynchronous nature of communication with Redux Thunk_
 
-### Login Button
-<img src="demo/login.gif" width="600px">
+<img src="demo/async.gif" width="500px">
 
-### Reserve Table
-_Allow customers to reserve table with datetime,  and number of guests info_
-<img src="demo/reserve.gif" width="600px">
+### Dish Detail page
+<img src="demo/menu.gif" width="500px">
+
+### Breadcrumb Navigation
+<img src="demo/breadcrumb.gif" width="500px">
+
+### Submit Comments
+_with React-Redux-Form_
+
+<img src="demo/comment.gif" width="600px">
 
 ### Feedback Form
-<img src="demo/feedback-form.png" width="500px">
+_with React-Redux-Form_
+
+<img src="demo/feedback.gif" width="500px">
 
 ### About Us Page
-<img src="demo/aboutus.png">
-
-### Accordian 
-_Display Corporate Leadership info_
-<img src="demo/leadership.gif">
+<img src="demo/aboutus.png" width="500px">
 
 ### Social Media Buttons
 _to share the website_
 
-<img src="demo/social.png" width="500px">
+<img src="demo/footer.png" width="500px">
