@@ -22,15 +22,15 @@ _Design to recognize the asynchronous nature of communication with Redux Thunk_
 ### Breadcrumb Navigation
 <img src="demo/breadcrumb.gif" width="500px">
 
-### Submit Comments
-_with React-Redux-Form_
-
-<img src="demo/comment.gif" width="600px">
-
 ### Feedback Form
 _with React-Redux-Form_
 
 <img src="demo/feedback.gif" width="500px">
+
+### Submit Comments
+_with React-Redux-Form_
+
+<img src="demo/comment.gif" width="600px">
 
 ### About Us Page
 <img src="demo/aboutus.png" width="500px">
