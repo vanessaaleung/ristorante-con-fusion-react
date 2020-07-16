@@ -162,6 +162,8 @@ address a:hover {
 /* Home */
 .card-title {
   font-weight: bold;
+  color: black;
+  font-size: 26px;
 }
 
 /* Links */
@@ -184,6 +186,9 @@ address a:hover {
   font-size: 28px;
 }
 
+.media-object{
+  max-height: 150px;
+}
 
 
 
