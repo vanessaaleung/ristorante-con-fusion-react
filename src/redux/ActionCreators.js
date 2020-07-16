@@ -2,6 +2,7 @@
 
 import * as ActionTypes from './ActionTypes';
 import { DISHES } from '../shared/dishes';
+import { LEADERS } from '../shared/leaders';
 
 export const addComment = (dishId, rating, author, comment) => ({
   type: ActionTypes.ADD_COMMENT,
@@ -24,7 +25,6 @@ export const fetchDishes = () => (dispatch) => {
   }, 2000);
 };
 
-// inform the dishes are loading
 export const dishesLoading = () => ({
   type: ActionTypes.DISHES_LOADING
 });
@@ -38,3 +38,30 @@ export const addDishes = (dishes) => ({
   type: ActionTypes.ADD_DISHES,
   payload: dishes
 });
+
+// enable the fetching of leaders info and update the redux store
+export const fetchLeaders = () => (dispatch) => {
+  dispatch(leadersLoading(true));
+  
+  setTimeout(() => {
+    dispatch(addLeaders(LEADERS))
+  }, 2000);
+};
+
+export const leadersLoading = () => ({
+  type: ActionTypes.LEADERS_LOADING
+});
+
+export const leadersFailed = (errmess) => ({
+  type: ActionTypes.LEADERS_FAILED,
+  payload: errmess
+});
+
+export const addLeaders = (leaders) => ({
+  type: ActionTypes.ADD_LEADERS,
+  payload: leaders
+});
+
+
+
+

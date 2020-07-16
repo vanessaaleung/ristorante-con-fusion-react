@@ -11,7 +11,7 @@ import Contact from './ContactComponent.js';
 import Footer from './FooterComponent.js';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'; // connect component with redux store
-import { addComment, fetchDishes } from '../redux/ActionCreators'; // obtain action object
+import { addComment, fetchDishes, fetchLeaders } from '../redux/ActionCreators'; // obtain action object
 import { actions } from 'react-redux-form';
 
 // map redux store's state into props, make available to component
@@ -29,13 +29,15 @@ const mapDispatchToProps = (dispatch) => ({
   addComment: (dishId, rating, author, comment) => 
         dispatch(addComment(dishId, rating, author, comment)),
   fetchDishes: () => { dispatch(fetchDishes()) },
-  resetFeedbackForm: () => { dispatch(actions.reset('feedback')) }
+  resetFeedbackForm: () => { dispatch(actions.reset('feedback')) },
+  fetchLeaders: () => { dispatch(fetchLeaders()) }
 });
 
 class Main extends Component {
 
   componentDidMount() {
     this.props.fetchDishes(); // fetch dishes and load to the redux store
+    this.props.fetchLeaders();
   }
 
   // return the corresponding view for the component 
@@ -50,8 +52,10 @@ class Main extends Component {
               dishesErrMess={this.props.dishes.errMess}
               promotion={this.props.promotions.filter(
                 (promo) => promo.featured )[0] }
-              leader={this.props.leaders.filter(
+              leader={this.props.leaders.leaders.filter(
                 (leader) => leader.featured )[0] }
+              leadersLoading={this.props.leaders.isLoading}
+              leadersErrMess={this.props.leaders.errMess}
           />
       );
     }
