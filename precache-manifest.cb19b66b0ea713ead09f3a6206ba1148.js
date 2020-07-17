@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7c95c10b0e225521ec6737d1d4c9f6b6",
+    "revision": "fb9ccd04b4878544fbe1876839bfd1a2",
     "url": "/ristorante-con-fusion-react/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ristorante-con-fusion-react/static/css/2.5d98a1ec.chunk.css"
   },
   {
-    "revision": "37a159f0f93f39b8acc0",
+    "revision": "a99ef3db51330133c551",
     "url": "/ristorante-con-fusion-react/static/css/main.0d641018.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ristorante-con-fusion-react/static/js/2.10792348.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "37a159f0f93f39b8acc0",
-    "url": "/ristorante-con-fusion-react/static/js/main.930c500a.chunk.js"
+    "revision": "a99ef3db51330133c551",
+    "url": "/ristorante-con-fusion-react/static/js/main.d128f012.chunk.js"
   },
   {
     "revision": "e97b7c2d8d8bac66783a",
