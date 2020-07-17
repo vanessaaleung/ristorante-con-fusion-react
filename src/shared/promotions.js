@@ -4,7 +4,7 @@ export const PROMOTIONS = [
   {
     id: 0,
     name: 'Weekend Grand Buffet',
-    image: '/assets/images/buffet.png',
+    image: 'https://github.com/vanessaaleung/ristorante-con-fusion-react/blob/master/public/assets/images/buffet.png?raw=true',
     label: 'New',
     price: '19.99',
     featured: true,
