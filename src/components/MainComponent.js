@@ -11,7 +11,7 @@ import Contact from './ContactComponent.js';
 import Footer from './FooterComponent.js';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'; // connect component with redux store
-import { addComment, fetchDishes, fetchLeaders } from '../redux/ActionCreators'; // obtain action object
+import { addComment, fetchDishes, fetchComments, fetchPromos, fetchLeaders } from '../redux/ActionCreators'; // obtain action object
 import { actions } from 'react-redux-form';
 
 // map redux store's state into props, make available to component
@@ -30,13 +30,18 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(addComment(dishId, rating, author, comment)),
   fetchDishes: () => { dispatch(fetchDishes()) },
   resetFeedbackForm: () => { dispatch(actions.reset('feedback')) },
+  fetchComments: () => { dispatch(fetchComments()) },
+  fetchPromos: () => { dispatch(fetchPromos()) },
   fetchLeaders: () => { dispatch(fetchLeaders()) }
 });
 
 class Main extends Component {
 
+  // fetch info and load to the redux store
   componentDidMount() {
-    this.props.fetchDishes(); // fetch dishes and load to the redux store
+    this.props.fetchDishes(); 
+    this.props.fetchComments();
+    this.props.fetchPromos();
     this.props.fetchLeaders();
   }
 
@@ -50,8 +55,10 @@ class Main extends Component {
                 (dish) => dish.featured )[0] }
               dishesLoading={this.props.dishes.isLoading}
               dishesErrMess={this.props.dishes.errMess}
-              promotion={this.props.promotions.filter(
+              promotion={this.props.promotions.promotions.filter(
                 (promo) => promo.featured )[0] }
+              promosLoading={this.props.promotions.isLoading}
+              promosErrMess={this.props.promotions.errMess}
               leader={this.props.leaders.leaders.filter(
                 (leader) => leader.featured )[0] }
               leadersLoading={this.props.leaders.isLoading}
@@ -67,8 +74,9 @@ class Main extends Component {
                             (dish) => dish.id === parseInt(match.params.dishId, 10))[0] } 
                     isLoading={this.props.dishes.isLoading}
                     errMess={this.props.dishes.errMess}
-                    comments={this.props.comments.filter(
+                    comments={this.props.comments.comments.filter(
                             (comment) => comment.dishId === parseInt(match.params.dishId, 10))}
+                    commentsErrMess={this.props.comments.errMess}
                     addComment={this.props.addComment}
           /> 
       );

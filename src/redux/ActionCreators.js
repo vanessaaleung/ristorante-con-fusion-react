@@ -1,8 +1,7 @@
 // Create Action objects
 
 import * as ActionTypes from './ActionTypes';
-import { DISHES } from '../shared/dishes';
-import { LEADERS } from '../shared/leaders';
+import { baseUrl } from '../shared/baseUrl'; // configure server communication
 
 export const addComment = (dishId, rating, author, comment) => ({
   type: ActionTypes.ADD_COMMENT,
@@ -15,14 +14,15 @@ export const addComment = (dishId, rating, author, comment) => ({
 });
 
 // a thunk: return a function which contains a inner function
+// enable the fetching of info and update the redux store
+
+// Dishes
 export const fetchDishes = () => (dispatch) => {
-  // first dispatch: setting isLoading to true
-  dispatch(dishesLoading(true));
+  dispatch(dishesLoading(true)); // setting isLoading to true
   
-  // after 2000 secs, second dispatch: pushes new dishes
-  setTimeout(() => {
-    dispatch(addDishes(DISHES))
-  }, 2000);
+  return fetch(baseUrl + 'dishes')
+            .then(response => response.json()) // convert response to json
+            .then(dishes => dispatch(addDishes(dishes)));
 };
 
 export const dishesLoading = () => ({
@@ -39,13 +39,53 @@ export const addDishes = (dishes) => ({
   payload: dishes
 });
 
-// enable the fetching of leaders info and update the redux store
+// Comments
+export const fetchComments = () => (dispatch) => {  
+  return fetch(baseUrl + 'comments')
+            .then(response => response.json()) 
+            .then(comments => dispatch(addComments(comments)));
+};
+
+export const commentsFailed = (errmess) => ({
+  type: ActionTypes.COMMENTS_FAILED,
+  payload: errmess
+});
+
+export const addComments = (comments) => ({
+  type: ActionTypes.ADD_COMMENTS,
+  payload: comments
+});
+
+// Promos
+export const fetchPromos = () => (dispatch) => {
+  dispatch(promosLoading(true));
+  
+  return fetch(baseUrl + 'promotions')
+            .then(response => response.json())
+            .then(promos => dispatch(addPromos(promos)));
+};
+
+export const promosLoading = () => ({
+  type: ActionTypes.PROMOS_LOADING
+});
+
+export const promosFailed = (errmess) => ({
+  type: ActionTypes.PROMOS_FAILED,
+  payload: errmess
+});
+
+export const addPromos = (promos) => ({
+  type: ActionTypes.ADD_PROMOS,
+  payload: promos
+});
+
+// Leaders
 export const fetchLeaders = () => (dispatch) => {
   dispatch(leadersLoading(true));
   
-  setTimeout(() => {
-    dispatch(addLeaders(LEADERS))
-  }, 2000);
+  return fetch(baseUrl + 'leaders')
+            .then(response => response.json()) 
+            .then(leaders => dispatch(addLeaders(leaders)));
 };
 
 export const leadersLoading = () => ({
