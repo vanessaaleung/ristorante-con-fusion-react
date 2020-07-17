@@ -27,7 +27,7 @@ function RenderDish({ dish }) {
   );
 }
 
-function RenderComments({ comments, addComment, dishId }) {
+function RenderComments({ comments, postComment, dishId }) {
   if (comments != null) {
     const comment = comments.map((comment) => {
       return (
@@ -44,7 +44,7 @@ function RenderComments({ comments, addComment, dishId }) {
       <div className="col-12 col-md-5 m-1">
         <h4>Comments</h4>
         <ul className="list-unstyled">{comment}</ul>
-        <CommmentForm dishId={dishId} addComment={addComment} />
+        <CommmentForm dishId={dishId} postComment={postComment} />
       </div>
     );
   }
@@ -78,7 +78,7 @@ class CommmentForm extends Component {
     console.log("Current State is: " + JSON.stringify(values));
 
     // add the comments to the comments state part of the redux store
-    this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+    this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
 
     // close the modal closing the alert
     this.setState({
@@ -186,7 +186,7 @@ const DishDetail = (props) => {
         <div className="row">
           <RenderDish dish={props.dish} />
           <RenderComments comments={props.comments}
-                          addComment={props.addComment}
+                          postComment={props.postComment}
                           dishId={props.dish.id} // as the comments don't know the dishId
               />
         </div>

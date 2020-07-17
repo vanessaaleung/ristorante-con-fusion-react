@@ -11,11 +11,11 @@ import Contact from './ContactComponent.js';
 import Footer from './FooterComponent.js';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'; // connect component with redux store
-import { addComment, fetchDishes, fetchComments, fetchPromos, fetchLeaders } from '../redux/ActionCreators'; // obtain action object
+import { postComment, fetchDishes, fetchComments, fetchPromos, fetchLeaders } from '../redux/ActionCreators'; // obtain action object
 import { actions } from 'react-redux-form';
 
 // map redux store's state into props, make available to component
-const mapStateToProps = state => {  // state: from redux store
+const mapStateToProps = state => {
     return {
       dishes: state.dishes,
       comments: state.comments,
@@ -26,8 +26,8 @@ const mapStateToProps = state => {  // state: from redux store
 
 // dispatch the action
 const mapDispatchToProps = (dispatch) => ({
-  addComment: (dishId, rating, author, comment) => 
-        dispatch(addComment(dishId, rating, author, comment)),
+  postComment: (dishId, rating, author, comment) => 
+        dispatch(postComment(dishId, rating, author, comment)),
   fetchDishes: () => { dispatch(fetchDishes()) },
   resetFeedbackForm: () => { dispatch(actions.reset('feedback')) },
   fetchComments: () => { dispatch(fetchComments()) },
@@ -77,7 +77,7 @@ class Main extends Component {
                     comments={this.props.comments.comments.filter(
                             (comment) => comment.dishId === parseInt(match.params.dishId, 10))}
                     commentsErrMess={this.props.comments.errMess}
-                    addComment={this.props.addComment}
+                    postComment={this.props.postComment}
           /> 
       );
     }
