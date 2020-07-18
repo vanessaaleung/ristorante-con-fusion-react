@@ -1,7 +1,8 @@
 // define various action types by using string constants
-// support fetching of leaders info from server
+// support fetching of info from server
 
 export const ADD_COMMENT = 'ADD_COMMENT';
+export const ADD_FEEDBACK = 'ADD_FEEDBACK';
 
 export const DISHES_LOADING = 'DISHES_LOADING';
 export const DISHES_FAILED = 'DISHES_FAILED';
